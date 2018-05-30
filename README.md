@@ -9,6 +9,15 @@ than having to retype the commands all of the time.
 
 It also enables version controlling of more dotfiles because y'know, Linux.
 
+## Installation
+
+```
+git clone https://github.com/joereynolds/entree
+cd entree
+sudo chmod a+x entree
+sudo mv entree /usr/local/bin
+```
+
 ## .entreerc
 
 Your `.entreerc` is where you store all your watches, it's in a similar format to an ini file and is located in your home directory (`~/.entreerc`). Here's an example:
