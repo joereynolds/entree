@@ -1,4 +1,4 @@
-# Entree
+# Entrée
 
 A way to version control and manage your [entr](http://entrproject.org/) watchers.
 
