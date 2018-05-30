@@ -26,7 +26,7 @@ Your `.entreerc` is where you store all your watches, it's in a similar format t
 # Located in ~/.entreerc
 
 [run-build]
-ls ~/programs/mort/test/fixtures/*.css | entr npm run build
+find . -not -path "./node_modules/*" | entr npm run build
 
 [detect-dead-css]
 ls ~/programs/mort/test/fixtures/*.css | entr mort -vf /_
