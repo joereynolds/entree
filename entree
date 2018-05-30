@@ -1,0 +1,46 @@
+#!/bin/bash 
+
+sub_help() {
+    cat << EOF
+usage: entree [subcommand]
+SUBCOMMANDS:
+  list    Show all watchers
+  show    Show what a specific watcher does
+  watch   Begin the command for that watcher
+EOF
+}
+
+sub_list() {
+    grep '\[' ~/.entreerc | tr -d []
+}
+
+sub_show() {
+    grep "\[$1\]" ~/.entreerc -A 1 || echo "No watcher with name '$1'"
+}
+
+sub_watch() {
+    watcher=$(grep "\[$1\]" ~/.entreerc -A 1 | tail -n1)
+    echo "Executing $watcher"
+    eval $watcher
+}
+
+subcommand=$1
+
+case $subcommand in 
+    "" | "-h" | "--help" | "help")
+        sub_help
+        ;;
+    *)
+        shift
+        sub_${subcommand} $@
+        if [ $? = 127 ]; then
+            echo "$subcommand is not a valid subcommand" >&2
+            exit 1
+        fi
+        ;;
+esac
+
+
+# TODO
+# Bash shell completion.
+# Make sure the watcher specified in `sub_watch` is valid.
