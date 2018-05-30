@@ -19,6 +19,15 @@ ls ~/programs/mort/test/fixtures/*.css | entr mort -vf /_
 
 With the above in mind, here are the commands available to run  
 
+
+### Syntax
+
+Syntax for the `~/.enteerc` is very simple. just add the name of your watcher and on the line beneath, the command for entr to run.
+
+Anything else is considered a comment so feel free to heavily annotate your `~/.enteerc`.
+
+
+### Commands 
 **List**
 
 Lists all watchers in your `~/.entreerc`
