@@ -1,11 +1,17 @@
 # Entree
 
-A wrapper for `entr`, the file watcher.
+A way to version control and manage your [entr](http://entrproject.org/) watchers.
+
+**Why?**
+
+As soon as I reboot my machine, I have some watchers that I always start, this makes it more manageable
+than having to retype the commands all of the time.
+
+It also enables version controlling of more dotfiles because y'know, Linux.
 
 ## .entreerc
 
-This is where you store your watchers, it's in the format of an ini file, here's an example:
-
+Your `.entreerc` is where you store all your watches, it's in a similar format to an ini file and is located in your home directory (`~/.entreerc`). Here's an example:
 
 ```
 # Located in ~/.entreerc
@@ -17,17 +23,17 @@ ls ~/programs/mort/test/fixtures/*.css | entr npm run build
 ls ~/programs/mort/test/fixtures/*.css | entr mort -vf /_
 ```
 
-With the above in mind, here are the commands available to run  
-
-
 ### Syntax
 
-Syntax for the `~/.enteerc` is very simple. just add the name of your watcher and on the line beneath, the command for entr to run.
+Syntax for the `~/.entreerc` is very simple. just add the name of your watcher and on the line beneath, the command for entr to run.
 
-Anything else is considered a comment so feel free to heavily annotate your `~/.enteerc`.
+Anything else is considered a comment so feel free to heavily annotate your `~/.entreerc`.
 
 
 ### Commands 
+
+With the above `~/.entreerc` in mind, here are the commands available to run:
+
 **List**
 
 Lists all watchers in your `~/.entreerc`
