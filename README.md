@@ -44,6 +44,12 @@ Anything else is considered a comment so feel free to heavily annotate your `~/.
 
 With the above `~/.entreerc` in mind, here are the commands available to run:
 
+(entree supports tab completion, use it.)
+
+**Edit**
+
+Opens up your `~/.entreerc` in your `$EDITOR` or vim if you don't have one.
+
 **List**
 
 Lists all watchers in your `~/.entreerc`
@@ -55,6 +61,8 @@ detect-dead-css
 ```
 
 **Show**
+
+Shows the watcher and what it does
 
 ```
 $ entree show detect-dead-css
