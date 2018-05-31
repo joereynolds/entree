@@ -14,13 +14,10 @@ It also enables version controlling of more dotfiles because y'know, Linux.
 ```
 git clone https://github.com/joereynolds/entree
 cd entree
-sudo chmod a+x entree
-sudo mv entree /usr/local/bin
+./install.sh
 ```
-If you'd like to enable tab completion
-```
-sudo mv entree_completion /etc/bash_completion.d/entree
-```
+This installs `entree` and the bash tab completion for `entree`.
+
 
 ## .entreerc
 
