@@ -1,0 +1,30 @@
+#!/bin/bash
+
+_entree()
+{
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts="watch list show help edit"
+
+    case "${prev}" in
+	watch)
+	    local watchers=$(grep '\[' ~/.entreerc | tr -d [])
+	    COMPREPLY=($(compgen -W "${watchers}" -- ${cur}))
+	    return 0
+	    ;;
+	show)
+	    local watchers=$(grep '\[' ~/.entreerc | tr -d [])
+	    COMPREPLY=($(compgen -W "${watchers}" -- ${cur}))
+	    return 0
+	    ;;
+        *)
+        ;;
+    esac
+
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    return 0
+}
+
+complete -F _entree entree

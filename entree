@@ -4,10 +4,17 @@ sub_help() {
     cat << EOF
 usage: entree [subcommand]
 SUBCOMMANDS:
+  edit    Edit your ~/.entreerc
   list    Show all watchers
   show    Show what a specific watcher does
   watch   Begin the command for that watcher
+  help    Display this help
+  
 EOF
+}
+
+sub_edit() {
+    "${EDITOR:-vim}" ~/.entreerc
 }
 
 sub_list() {
@@ -39,8 +46,3 @@ case $subcommand in
         fi
         ;;
 esac
-
-
-# TODO
-# Bash shell completion.
-# Make sure the watcher specified in `sub_watch` is valid.
