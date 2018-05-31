@@ -17,6 +17,10 @@ cd entree
 sudo chmod a+x entree
 sudo mv entree /usr/local/bin
 ```
+If you'd like to enable tab completion
+```
+sudo mv entree_completion /etc/bash_completion.d/entree
+```
 
 ## .entreerc
 
