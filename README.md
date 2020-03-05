@@ -91,7 +91,3 @@ SUBCOMMANDS:
   show    Show what a specific watcher does
   watch   Begin the command for that watcher
 ```
-
-# Did you know?
-
-This isn't really restricted just to `entr`. You can do anything underneath the name of the watcher, but at that point, your probably just recreating bash aliases in a more verbose fashion.
